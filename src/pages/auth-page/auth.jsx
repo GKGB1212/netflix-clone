@@ -4,11 +4,43 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 //import { withTranslate } from "react-redux-multilingual";
 import { useTranslation } from "react-i18next";
-import { signInWithGoogle, signInWithFacebook, signInWithGithub } from "../../../src/firebase/config"
+import { signInWithGoogle, signInWithFacebook, signInWithGithub } from "../../../src/firebase/config";
+import { isEmail, isPhoneNumberVN, isPasswordValid } from "../../common/helper";
+import { useDispatch, useSelector } from "react-redux";
+import { signInWithEmail } from "../../redux/user/user.actions";
 const Auth = () => {
+    const { loading } = useSelector((state) => state.user);
+    const dispatch = useDispatch();
     const { i18n, t } = useTranslation();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [textInvalidEmail, setTextInvalidEmail] = useState('');
+    const [textInvalidPassword, setTextInvalidPassword] = useState('');
+    function signIn() {
+        if (textInvalidEmail.length > 0 || textInvalidPassword.length > 0) {
+            alert("omw")
+            return
+        } else {
+            dispatch(signInWithEmail(email, password));
+        }
+    }
+    const handleOnBlurEmail = () => {
+        if (email === ""
+            || !isEmail(email)) {
+            setTextInvalidEmail(t('emailInvalid'));
+            return;
+        }
+        setTextInvalidEmail('');
+    }
+    const handleOnBlurPassword = () => {
+        // if (password === ""
+        //     || isPasswordValid(password)) {
+        //         alert("fffffffff")
+        //     setTextInvalidPassword(t('passwordInvalid'));
+        //     return;
+        // }
+        setTextInvalidPassword('');
+    }
     return (
         <div className="relative w-full bg-[url('/public/images/hero.jpg')] bg-no-repeat bg-center bg-cover" style={{ height: "100vh" }}>
             <div className="bg-black w-full h-full lg:bg-opacity-50">
@@ -28,20 +60,25 @@ const Auth = () => {
                             pt-8">
                             Sign In
                         </h2>
+                        <div className="">
+                            Sorry, we can't find an account with this email address. Please try again or create a new account.
+                        </div>
                         <Input type={"email"}
                             label={t('enterEmail')}
                             id={"email"}
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
-                            textInvalid={t('emailInvalid')} />
+                            onBlur={() => handleOnBlurEmail()}
+                            textInvalid={textInvalidEmail} />
                         <Input
                             type={"password"}
                             label={t('password')}
                             id={"password"}
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
-                            textInvalid={t('passwordInvalid')} />
-                        <button className="bg-red-600 py-3 text-white w-full rounded-md hover:bg-red-700 transition">{t('signIn')}</button>
+                            onBlur={() => handleOnBlurPassword()}
+                            textInvalid={textInvalidPassword} />
+                        <button className="bg-red-600 py-3 text-white w-full rounded-md hover:bg-red-700 transition disabled:bg-red-900 disabled:opacity-80" disabled={loading} onClick={() => signIn()}>{t('signIn')}</button>
                         <div
                             className="
                                 flex

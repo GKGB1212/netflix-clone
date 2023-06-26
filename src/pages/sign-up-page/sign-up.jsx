@@ -6,7 +6,6 @@ import Input from '../../components/InputComponent/Input';
 import { use } from 'i18next';
 import InputSignIn from '../../components/InputComponent/InputSignIn';
 import SelectLangugages from '../../components/SelectLanguageComponent/SelectLangugages';
-import main from '../../script';
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const { t, i18n } = useTranslation()
@@ -50,7 +49,9 @@ export default function SignUpPage() {
                 id="email"
                 textInvalid="Bạn phải nhập email"
                 translation={t} />
-              <button className="bg-red-600 py-2.5 px-4 text-white rounded-md hover:bg-red-700 transition font-semibold text-2xl max-md:text-sm " onClick={()=>main()}>{t('getStarted')} <i class="fa-solid fa-chevron-right"></i></button></div>
+              <button className="bg-red-600 py-2.5 px-4 text-white rounded-md hover:bg-red-700 transition font-semibold text-2xl max-md:text-sm ">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button></div>
           </form>
         </div>
       </div>

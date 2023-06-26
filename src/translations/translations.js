@@ -13,6 +13,7 @@ export default {
         getStarted: "Get Started",
         emailSignIn:"Enter email",
         cardHeroTextSubtitle2:"Ready to watch? Enter your email to create or restart your membership.",
+        whoIsWatching:"Who is watching?"
       }
     },
     vn: {
@@ -29,6 +30,7 @@ export default {
         getStarted: "Bắt đầu",
         emailSignIn:"Địa chỉ email",
         cardHeroTextSubtitle2:"Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại tư cách thành viên của bạn.",
+        whoIsWatching:"Ai đang xem?"
       }
     }
   }

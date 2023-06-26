@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* body{
+ body{
     @apply bg-zinc-900 h-full overflow-hidden
 }
 
@@ -11,4 +11,4 @@
 
 html{
     @apply h-full;
-} */
+} 

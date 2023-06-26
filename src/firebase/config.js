@@ -33,6 +33,7 @@ export const signInWithFacebook= ()=>{
   signInWithPopup(authentication, facebookProvider)
   .then((result)=>{
     console.log("result signInWithFacebook", result);
+    
   })
   .catch((error)=>{
     console.log("error signInWithFacebook", error)
