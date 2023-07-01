@@ -4,6 +4,9 @@ import Auth from './pages/auth-page/auth';
 import SignUpPage from './pages/sign-up-page/sign-up';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import Profile from './pages/profile-page/profile';
+import ProfileManage from './pages/profile-manage-page/profile-manage';
+import UpdateProfileInfoModal from './pages/profile-manage-page/components/update-profile-modal/update-profile-modal';
+import Home from './pages/home-page/home';
 function App() {
   useEffect(() => {
     const auth = getAuth();
@@ -22,7 +25,7 @@ function App() {
     });
   }, []);
   return (
-    <Profile />
+    <Home />
   );
 }
 

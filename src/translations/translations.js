@@ -13,7 +13,21 @@ export default {
         getStarted: "Get Started",
         emailSignIn:"Enter email",
         cardHeroTextSubtitle2:"Ready to watch? Enter your email to create or restart your membership.",
-        whoIsWatching:"Who is watching?"
+        whoIsWatching:"Who is watching?",
+        addProfile:"Add Profile",
+        manageprofile:"Manage profile",
+        complete:"Complete",
+        cancel:"Cancel",
+        deleteProfile:"Delete profile",
+        save:"Save",
+        browse: "Browse",
+        home:"Home",
+        TVShows:"TV Shows",
+        movies:"Movies",
+        newAndPopupar:"New & Popular",
+        myList:"My List",
+        browseByLanguages:"Browse by Languages",
+        placeHolderSearch:"Movies, actors, genres..."
       }
     },
     vn: {
@@ -30,7 +44,21 @@ export default {
         getStarted: "Bắt đầu",
         emailSignIn:"Địa chỉ email",
         cardHeroTextSubtitle2:"Bạn đã sẵn sàng xem chưa? Nhập email để tạo hoặc kích hoạt lại tư cách thành viên của bạn.",
-        whoIsWatching:"Ai đang xem?"
+        whoIsWatching:"Ai đang xem?",
+        addProfile:"Thêm hồ sơ",
+        manageprofile:"Quản lí hồ sơ",
+        complete:"Hoàn tất",
+        cancel:"Cancel",
+        deleteProfile:"Xóa hồ sơ",
+        save:"Lưu",
+        browse: "Duyệt tìm",
+        home:"Trang chủ",
+        TVShows:"Phim T.hình",
+        movies:"Phim",
+        newAndPopupar:"Mới & Phổ biến",
+        myList:"Danh sách của tôi",
+        browseByLanguages:"Duyệt tìm theo ngôn ngữ",
+        placeHolderSearch:"Phim, diễn viên, thể loại..."
       }
     }
   }

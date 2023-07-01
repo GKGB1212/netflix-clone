@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { LANGUAGES } from '../../constants';
 import { useTranslation } from 'react-i18next';
-import Button from '../../components/ButtonComponent/Button';
+import Button from '../../components/button';
 import Input from '../../components/InputComponent/Input';
 import { use } from 'i18next';
 import InputSignIn from '../../components/InputComponent/InputSignIn';
-import SelectLangugages from '../../components/SelectLanguageComponent/SelectLangugages';
+import SelectLangugages from '../../components/selectLangugages';
 export default function SignUpPage() {
   const [email, setEmail] = useState("");
   const { t, i18n } = useTranslation()
